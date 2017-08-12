@@ -13,11 +13,11 @@ class grafanadash::grafana (
   $grafana_host       = $grafanadash::grafana::params::grafana_host,
   $grafana_port       = $grafanadash::grafana::params::grafana_port,
 ) inherits grafanadash::grafana::params {
-  archive { "grafana-${version}":
-    ensure   => present,
-    url      => $download_url,
-    target   => $install_dir,
-    checksum => false,
+  archive { "/tmp/grafana-${version}":
+    ensure       => present,
+    source       => $download_url,
+    extract_path => $install_dir,
+    checksum     => false,
   } ->
 
   file { "${install_dir}/grafana-${version}/config.js":
