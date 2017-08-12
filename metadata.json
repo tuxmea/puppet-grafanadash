@@ -2,16 +2,16 @@
   "name": "tuxmea-grafanadash",
   "version": "0.0.6",
   "source": "git clone https://github.com/tuxmea/puppet-grafanadash",
-  "author": "Chris Price, Martin Alfke",
+  "author": "Chris Price",
   "license": "Mozilla Public License Version 2.0",
   "summary": "Grafana Dashboard module",
   "description": "Installs graphite and grafana",
   "project_page": "https://github.com/tuxmea/puppet-grafanadash",
 
   "dependencies": [
-    { "name": "dwerder/graphite", "version_requirement": "5.16.1" },
+    { "name": "dwerder/graphite", "version_requirement": "7.1.0" },
     { "name": "puppet/archive", "version_requirement": "1.3.0" },
-    { "name": "stahnma/epel", "version_requirement": "0.0.6" },
-    { "name": "elastic/elasticsearch", "version_requirement": "0.3.2"}
+    { "name": "stahnma/epel", "version_requirement": "1.2.2" },
+    { "name": "elastic/elasticsearch", "version_requirement": "5.4.1"}
   ]
 }
