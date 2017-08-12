@@ -24,13 +24,13 @@ class grafanadash::grafana (
     content => template('grafanadash/opt/grafana/config.js.erb'),
     owner   => $user,
     group   => $group,
-    require => Archive["grafana-${version}"],
+    require => Archive["/tmp/grafana-${version}"],
   } ->
 
   file { $symlink_name:
     ensure  => link,
     target  => "${install_dir}/grafana-${version}",
-    require => Archive["grafana-${version}"],
+    require => Archive["/tmp/grafana-${version}"],
   } ->
 
   file { "${::graphite::params::apacheconf_dir}/grafana.conf":
