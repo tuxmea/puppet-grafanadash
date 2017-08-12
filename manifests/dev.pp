@@ -23,14 +23,14 @@ class grafanadash::dev() {
     java_install => true,
     manage_repo  => true,
     repo_version => '1.0',
-    config => $es_config_hash,
+    config       => $es_config_hash,
   } ->
 
   class { 'grafanadash::grafana':
-    graphite_host => $::graphite::gr_web_servername,
-    graphite_port => $::graphite::gr_apache_port,
+    graphite_host      => $::graphite::gr_web_servername,
+    graphite_port      => $::graphite::gr_apache_port,
     elasticsearch_host => $::fqdn,
-    grafana_host => $::fqdn,
+    grafana_host       => $::fqdn,
   } ->
 
   # super hacky but for some reason the graphite database is coming up

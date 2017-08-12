@@ -17,7 +17,6 @@ class grafanadash::grafana (
     ensure       => present,
     source       => $download_url,
     extract_path => $install_dir,
-    checksum     => false,
   } ->
 
   file { "${install_dir}/grafana-${version}/config.js":
