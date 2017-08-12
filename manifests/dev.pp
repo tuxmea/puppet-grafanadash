@@ -20,10 +20,11 @@ class grafanadash::dev() {
   } ->
 
   class { 'elasticsearch':
-    java_install => true,
-    manage_repo  => true,
-    repo_version => '1.0',
-    config       => $es_config_hash,
+    java_install      => true,
+    manage_repo       => true,
+    repo_version      => '1.5',
+    restart_on_change => true,
+    config            => $es_config_hash,
   } ->
 
   class { 'grafanadash::grafana':
