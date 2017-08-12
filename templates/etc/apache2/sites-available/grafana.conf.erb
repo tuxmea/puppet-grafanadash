@@ -4,3 +4,6 @@ Listen <%= scope.lookupvar('grafanadash::grafana::params::grafana_port') %>
 	ServerName <%= scope.lookupvar('grafanadash::grafana::params::grafana_host') %>
 	DocumentRoot "/opt/grafana"
 </VirtualHost>
+<Directory /opt/grafana>
+  Require all granted
+</Directory>
