@@ -7,25 +7,15 @@ class grafanadash::dev() {
     ensure => 'stopped',
   }
 
-  $es_config_hash = {}
-
   package { 'cronie':
     ensure => present,
   } ->
-
-  tp::install { 'epel': } ->
 
   class { 'graphite':
      gr_web_cors_allow_from_all => true,
   } ->
 
-  class { 'elasticsearch':
-    java_install      => true,
-    manage_repo       => true,
-    repo_version      => '1.5',
-    restart_on_change => true,
-    config            => $es_config_hash,
-  } ->
+  tp::install { 'elasticsearch': }
 
   class { 'grafanadash::grafana':
     graphite_host      => $::graphite::gr_web_servername,
