@@ -1,5 +1,5 @@
 {
-  "name": "puppet-grafanadash",
+  "name": "tuxmea-grafanadash",
   "version": "0.0.8",
   "source": "https://github.com/tuxmea/puppet-grafanadash",
   "author": "Chris Price, Martin Alfke",
