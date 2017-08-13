@@ -13,7 +13,7 @@ class grafanadash::dev() {
     ensure => present,
   } ->
 
-  class { 'epel': } ->
+  tp::install { 'epel': } ->
 
   class { 'graphite':
      gr_web_cors_allow_from_all => true,
