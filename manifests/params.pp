@@ -1,3 +1,7 @@
+# class grafanadash::params
+#
+# set os defaults
+#
 class grafanadash::params {
   case $::osfamily {
     'Debian': {

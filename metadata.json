@@ -1,6 +1,6 @@
 {
-  "name": "tuxmea-grafanadash",
-  "version": "0.0.7",
+  "name": "puppet-grafanadash",
+  "version": "0.0.8",
   "source": "https://github.com/tuxmea/puppet-grafanadash",
   "author": "Chris Price, Martin Alfke",
   "license": "Mozilla Public License Version 2.0",

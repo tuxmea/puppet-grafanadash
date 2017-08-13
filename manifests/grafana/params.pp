@@ -1,3 +1,7 @@
+# class grafanadash::grafana::params
+#
+# set default values
+#
 class grafanadash::grafana::params {
   $version            = '1.5.4'
   $download_url       = "http://grafanarel.s3.amazonaws.com/grafana-${version}.tar.gz"

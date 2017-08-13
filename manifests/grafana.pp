@@ -1,3 +1,7 @@
+# class grafanadash::grafana
+#
+# installs grafana
+#
 class grafanadash::grafana (
   $version            = $grafanadash::grafana::params::version,
   $download_url       = $grafanadash::grafana::params::download_url,
@@ -18,21 +22,21 @@ class grafanadash::grafana (
     extract      => true,
     source       => $download_url,
     extract_path => $install_dir,
-  } ->
+  }
 
   file { "${install_dir}/grafana-${version}/config.js":
-    ensure  => present,
+    ensure  => file,
     content => template('grafanadash/opt/grafana/config.js.erb'),
     owner   => $user,
     group   => $group,
     require => Archive["/tmp/grafana-${version}.tar.gz"],
-  } ->
+  }
 
   file { $symlink_name:
     ensure  => link,
     target  => "${install_dir}/grafana-${version}",
     require => Archive["/tmp/grafana-${version}.tar.gz"],
-  } ->
+  }
 
   file { "${::graphite::params::apacheconf_dir}/grafana.conf":
     ensure  => file,
